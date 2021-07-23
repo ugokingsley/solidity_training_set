@@ -1,0 +1,210 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidState",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlyBuyer",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlySeller",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ValueNotEven",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Aborted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "ItemReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "PurchaseConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "SellerRefunded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "abort",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "buyer",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmPurchase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmReceived",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refundSeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seller",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum Purchase.State",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "value",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"InvalidState()": [
+					{
+						"notice": "The function cannot be called at the current state."
+					}
+				],
+				"OnlyBuyer()": [
+					{
+						"notice": "Only the buyer can call this function."
+					}
+				],
+				"OnlySeller()": [
+					{
+						"notice": "Only the seller can call this function."
+					}
+				],
+				"ValueNotEven()": [
+					{
+						"notice": "The provided value has to be even."
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {
+				"abort()": {
+					"notice": "Abort the purchase and reclaim the ether. Can only be called by the seller before the contract is locked."
+				},
+				"confirmPurchase()": {
+					"notice": "Confirm the purchase as buyer. Transaction has to include `2 * value` ether. The ether will be locked until confirmReceived is called."
+				},
+				"confirmReceived()": {
+					"notice": "Confirm that you (the buyer) received the item. This will release the locked ether."
+				},
+				"refundSeller()": {
+					"notice": "This function refunds the seller, i.e. pays back the locked funds of the seller."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity codes/remote_purchase.sol": "Purchase"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity codes/remote_purchase.sol": {
+			"keccak256": "0xb92c0d51f1517f87766f470dbfb57375d81c13509dbd571dc8a763c1d36236ea",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7dedf4a2be63122fc04948749d8203bd799865bb2e3a461e8b545a9d890d17ba",
+				"dweb:/ipfs/QmdPDP6BFnuQyAcERz8QMsZeSgKEn3rcwMmiFhXkze8XAq"
+			]
+		}
+	},
+	"version": 1
+}

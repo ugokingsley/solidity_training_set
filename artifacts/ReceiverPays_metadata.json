@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "claimPayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shutdown",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"shutdown()": {
+					"notice": "destroy the contract and reclaim the leftover funds."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity codes/micro_payment.sol": "ReceiverPays"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity codes/micro_payment.sol": {
+			"keccak256": "0xdb3eae58d1231973bfcfb52c8d6262f23e7db81cba10822d06e55d686ecafbf0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a50f6b3724f3e5923f93af2f3894c6b5b43ecae275a3c2df5c617febe34a6755",
+				"dweb:/ipfs/QmZRnz8ME294kPSAqxcZos23ga6q1WF2aje9FEju6Nnkqu"
+			]
+		}
+	},
+	"version": 1
+}
